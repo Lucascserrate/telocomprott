@@ -41,7 +41,7 @@ export default function App() {
       <Provider store={store}>
         <NativeRouter>
           <SafeAreaProvider>
-            <SafeAreaView edges={['top']}>
+            <SafeAreaView edges={['top', 'bottom']}>
               <Main />
             </SafeAreaView>
           </SafeAreaProvider>

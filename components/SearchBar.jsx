@@ -20,7 +20,7 @@ const SearchBar = () => {
                 placeholder='Nombre del producto...'
                 onChangeText={handleInput}
                 value={input}
-                placeholderTextColor='#BDBDBD'
+                placeholderTextColor='#999'
                 style={styles.input}
             />
         </View>
@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
     container: {
         width: wp('80%'),
         backgroundColor: '#FEFEFE',
-        borderRadius: 12,
+        borderRadius: 8,
         flexDirection: 'row',
         alignItems: 'center',
         gap: 10,

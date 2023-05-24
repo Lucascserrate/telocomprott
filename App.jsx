@@ -40,11 +40,7 @@ export default function App() {
       <StatusBar style='auto' />
       <Provider store={store}>
         <NativeRouter>
-          <SafeAreaProvider>
-            <SafeAreaView edges={['top', 'bottom']}>
-              <Main />
-            </SafeAreaView>
-          </SafeAreaProvider>
+          <Main />
         </NativeRouter>
       </Provider>
     </>

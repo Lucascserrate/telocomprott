@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
+import { View, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import {
     widthPercentageToDP as wp,
     heightPercentageToDP as hp,
@@ -30,11 +30,11 @@ const styles = StyleSheet.create({
         height: 60,
         backgroundColor: colors.bgDark,
         position: 'absolute',
-        bottom: 20
+        bottom: 0
     },
     img: {
-        height: 30,
-        width: 30,
+        height: 25,
+        width: 25,
     }
 });
 

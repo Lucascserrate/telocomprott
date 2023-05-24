@@ -1,4 +1,4 @@
-import { GET_BY_ID, GET_FAVORITES, GET_PRODUCTS } from './actions';
+import { CLEAN_DETAIL, GET_BY_ID, GET_FAVORITES, GET_PRODUCTS } from './actions';
 
 const initialState = {
     products: [],
@@ -17,6 +17,12 @@ const rootReducer = (state = initialState, action) => {
             return {
                 ...state,
                 detail: action.payload
+            }
+
+        case CLEAN_DETAIL:
+            return {
+                ...state,
+                detail: {}
             }
         case GET_FAVORITES:
             return {

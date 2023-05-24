@@ -1,16 +1,29 @@
-import { View, Text, StyleSheet, ImageBackground, TouchableOpacity, Image } from 'react-native';
+import { useEffect } from 'react';
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { useNavigate } from 'react-router-native';
+import { getById } from '../redux/actions';
+import { useDispatch } from 'react-redux';
+import { Image } from 'react-native-elements';
 
-const Card = ({ title, images, price }) => {
+const Card = ({ id, title, images, price }) => {
+    const dispatch = useDispatch();
+
+    const navigate = useNavigate()
+
+    const handleNavigate = () => {
+        dispatch(getById(id))
+        navigate('/:id')
+    }
     return (
         <View style={styles.container}>
             <View style={styles.row}>
-                <ImageBackground style={styles.img} source={{ uri: images[0] }} resizeMode='contain' />
+                <Image style={styles.img} source={{ uri: images[0] }} resizeMode='contain' />
                 <View>
                     <Text style={styles.title}>{title}</Text>
                     <Text>{`$.${price}`}</Text>
                 </View>
             </View>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={handleNavigate}>
                 <Image style={styles.arrow} source={require('../assets/arrowRight.png')} />
             </TouchableOpacity>
 

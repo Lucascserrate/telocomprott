@@ -4,14 +4,17 @@ import {
     widthPercentageToDP as wp,
     heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
-import { colors } from '../utils/styles';
 import SearchIcon from '../assets/search.svg'
+import { useDispatch } from 'react-redux';
+import { getByName } from '../redux/actions';
 
 const SearchBar = () => {
+    const dispatch = useDispatch()
     const [input, setInput] = useState('')
 
     const handleInput = (input) => {
         setInput(input)
+        dispatch(getByName(input))
     }
     return (
         <View style={styles.container}>

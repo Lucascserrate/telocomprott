@@ -3,17 +3,15 @@ import {
     widthPercentageToDP as wp,
     heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
-const Pagination = ({ current, setCurrent, max, input, setInput }) => {
+const Pagination = ({ current, setCurrent, max }) => {
     const next = () => {
         if (current < max) {
             setCurrent(current + 1)
-            setInput(input + 1)
         }
     }
     const previous = () => {
         if (current > 1) {
             setCurrent(current - 1)
-            setInput(input - 1)
         }
 
     }

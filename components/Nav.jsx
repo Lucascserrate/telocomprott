@@ -8,9 +8,13 @@ import { useNavigate } from 'react-router-native';
 
 
 const Nav = () => {
+    const navigate = useNavigate();
+    const goHome = () => {
+        navigate('/')
+    }
     return (
         <View style={styles.container}>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={goHome}>
                 <Image source={require('../assets/home.png')} style={styles.img} />
             </TouchableOpacity>
             <TouchableOpacity>
@@ -27,14 +31,14 @@ const styles = StyleSheet.create({
         justifyContent: 'space-around',
         alignItems: 'center',
         width: wp(100),
-        height: 60,
+        height: 55,
         backgroundColor: colors.bgDark,
         position: 'absolute',
         bottom: 0
     },
     img: {
-        height: 25,
-        width: 25,
+        height: 22,
+        width: 22,
     }
 });
 

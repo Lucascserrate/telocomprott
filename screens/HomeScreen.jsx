@@ -10,20 +10,20 @@ import { useDispatch, useSelector } from 'react-redux';
 import Nav from '../components/Nav';
 import Pagination from '../components/Pagination';
 import Card from '../components/Card';
-import { useNavigate } from 'react-router-native';
-
+import { colors } from '../utils/styles';
+import SearchModal from '../components/SearchModal';
 
 const HomeScreen = () => {
     const dispatch = useDispatch()
     const products = useSelector(state => state.products)
-    const [skip, setSkip] = useState(0)
+    // const sortProducts = useSelector(state => state.sortProducts)
 
     useEffect(() => {
         dispatch(getProducts())
     }, [dispatch])
+    // console.log(sortProducts);
 
     // Pagination
-    const [input, setInput] = useState(1)
     const [current, setCurrent] = useState(1)
     const [perPage] = useState(5)
     const max = Math.ceil(products.length / perPage);
@@ -33,7 +33,8 @@ const HomeScreen = () => {
             {
                 products?.slice((current - 1) * perPage, (current - 1) * perPage + perPage).map((e, i) => <Card key={i} id={e.id} title={e.title} images={e.images} price={e.price} />)
             }
-            <Pagination current={current} setCurrent={setCurrent} max={max} input={input} setInput={setInput} />
+            <Pagination current={current} setCurrent={setCurrent} max={max} />
+
             <Nav />
         </View>
     );
@@ -43,7 +44,7 @@ const styles = StyleSheet.create({
     container: {
         height: hp(100),
         width: wp(100),
-        backgroundColor: '#E2E7EE'
+        backgroundColor: colors.bgLight
     },
     flat: {
         alignItems: 'center',

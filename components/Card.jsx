@@ -12,7 +12,7 @@ const Card = ({ id, title, images, price }) => {
 
     const handleNavigate = () => {
         dispatch(getById(id))
-        navigate('/:id')
+        navigate(`/${id}`)
     }
     return (
         <View style={styles.container}>

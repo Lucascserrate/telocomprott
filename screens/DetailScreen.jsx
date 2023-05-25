@@ -53,7 +53,7 @@ const DetailScreen = () => {
                             <TouchableOpacity style={styles.webButton}>
                                 <Text style={styles.webText}>Sitio Web</Text>
                             </TouchableOpacity>
-                            <FavButton id={id} detail={detail} />
+                            <FavButton detail={detail} />
                         </View>
                         <Text style={styles.visit} >Si quieres saber mas visitanos en:</Text>
                         <TouchableOpacity>

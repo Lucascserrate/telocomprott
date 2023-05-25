@@ -34,7 +34,6 @@ export default function App() {
   if (!poppinsLoaded) return null
 
   //>
-
   return (
     <>
       <StatusBar style='auto' />

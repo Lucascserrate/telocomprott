@@ -1,30 +1,22 @@
 //import liraries
 import { useState } from 'react';
-import { Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { StyleSheet, TouchableOpacity } from 'react-native';
 import { Image } from 'react-native-elements';
 import {
     widthPercentageToDP as wp,
     heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
-import { addFavorites, removeFavorites } from '../redux/actions';
-import { useDispatch, useSelector } from 'react-redux';
+import { addFavorites } from '../utils/storage';
 
-// create a component
-const FavButton = ({ id, detail }) => {
-    const dispatch = useDispatch();
+const FavButton = ({ detail }) => {
     const [toggle, setToggle] = useState(false);
-    const fav = useSelector(state => state.favorites)
-    // console.log(toggle);
-    console.log(fav);
-    const handlePress = () => {
-        console.log(id);
 
-        if (toggle) dispatch(removeFavorites(id))
-        else dispatch(addFavorites(detail))
+    const handleAdd = async () => {
         setToggle(!toggle)
+        await addFavorites(detail)
     }
     return (
-        <TouchableOpacity style={styles.container} onPress={handlePress}>
+        <TouchableOpacity style={styles.container} onPress={handleAdd}>
             {
                 toggle
                     ? <Image style={styles.img} source={require('../assets/favFull.png')} />

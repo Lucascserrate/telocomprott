@@ -12,7 +12,6 @@ import Pagination from '../components/Pagination';
 import Card from '../components/Card';
 import { colors } from '../utils/styles';
 import Categories from '../components/Categories';
-import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const HomeScreen = () => {
     const dispatch = useDispatch()
@@ -22,9 +21,6 @@ const HomeScreen = () => {
         dispatch(getProducts())
     }, [dispatch])
 
-    const setData = () => {
-        AsyncStorage.setItem('showFilters', showFilters.toString())
-    }
     // Pagination
     const [current, setCurrent] = useState(1)
     const [perPage] = useState(5)

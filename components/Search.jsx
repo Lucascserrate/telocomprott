@@ -10,7 +10,7 @@ import { useNavigate } from 'react-router-native';
 import { Image } from 'react-native-elements';
 
 
-const Search = ({ back, searchbar, setCurrent, showFilters, setShowFilters }) => {
+const Search = ({ back, searchbar, filters, setCurrent, showFilters, setShowFilters }) => {
     const navigate = useNavigate()
     const handleNavigate = () => {
         navigate('/')
@@ -24,9 +24,11 @@ const Search = ({ back, searchbar, setCurrent, showFilters, setShowFilters }) =>
             {
                 searchbar && <SearchBar setCurrent={setCurrent} />
             }
-            <TouchableOpacity onPress={() => setShowFilters(!showFilters)}>
-                <Image style={styles.filtersIcon} source={require('../assets/filters.png')} />
-            </TouchableOpacity>
+            {
+                filters && <TouchableOpacity onPress={() => setShowFilters(!showFilters)}>
+                    <Image style={styles.filtersIcon} source={require('../assets/filters.png')} />
+                </TouchableOpacity>
+            }
         </View>
     );
 };

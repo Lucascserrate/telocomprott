@@ -1,4 +1,4 @@
-import { View, StyleSheet } from 'react-native';
+import { View, StyleSheet, ScrollView } from 'react-native';
 import {
     widthPercentageToDP as wp,
     heightPercentageToDP as hp,
@@ -11,7 +11,6 @@ import Nav from '../components/Nav';
 import Pagination from '../components/Pagination';
 import Card from '../components/Card';
 import { colors } from '../utils/styles';
-import SearchModal from '../components/SearchModal';
 import Categories from '../components/Categories';
 
 const HomeScreen = () => {
@@ -29,11 +28,15 @@ const HomeScreen = () => {
     const max = Math.ceil(sortProducts.length / perPage);
     return (
         <View style={styles.container}>
-            <Search searchbar={true} setCurrent={setCurrent} showFilters={showFilters} setShowFilters={setShowFilters} />
-            {showFilters && <Categories />}
-            {
-                sortProducts?.slice((current - 1) * perPage, (current - 1) * perPage + perPage).map((e, i) => <Card key={i} id={e.id} title={e.title} images={e.images} price={e.price} />)
-            }
+            <Search searchbar={true} filters={true} setCurrent={setCurrent} showFilters={showFilters} setShowFilters={setShowFilters} />
+            <View>
+                <ScrollView style={styles.scroll}>
+                    {showFilters && <Categories />}
+                    {
+                        sortProducts?.slice((current - 1) * perPage, (current - 1) * perPage + perPage).map((e, i) => <Card key={i} id={e.id} title={e.title} images={e.images} price={e.price} />)
+                    }
+                </ScrollView>
+            </View>
             <Pagination current={current} setCurrent={setCurrent} max={max} />
 
             <Nav />
@@ -46,6 +49,9 @@ const styles = StyleSheet.create({
         height: hp(100),
         width: wp(100),
         backgroundColor: colors.bgLight
+    },
+    scroll: {
+        height: hp(73)
     },
 });
 

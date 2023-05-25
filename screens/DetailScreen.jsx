@@ -32,6 +32,9 @@ const DetailScreen = () => {
                     <View style={styles.centerImage}>
                         <Image style={styles.img} resizeMode='contain' source={{ uri: detail?.thumbnail }} />
                     </View>
+                    <View style={styles.tag} >
+                        <Text style={styles.text}>{detail?.category}</Text>
+                    </View>
                     <View style={styles.box}>
                         <View style={styles.flexStart}>
                             <View style={styles.row}>
@@ -41,10 +44,6 @@ const DetailScreen = () => {
                             <View style={styles.row}>
                                 <Text style={styles.rowKey}>Stock:</Text>
                                 <Text style={styles.rowValue}>{detail?.stock}</Text>
-                            </View>
-                            <View style={styles.row}>
-                                <Text style={styles.rowKey}>Categoria:</Text>
-                                <Text style={styles.rowValue}>{detail?.category}</Text>
                             </View>
                             <Text style={styles.rowKey}>Descripcion:</Text>
                         </View>
@@ -91,8 +90,19 @@ const styles = StyleSheet.create({
         width: wp(96),
         borderRadius: 12
     },
+    tag: {
+        alignItems: 'flex-end',
+        margin: 10,
+    },
+    text: {
+        paddingHorizontal: 15,
+        paddingVertical: 5,
+        backgroundColor: colors.bgDark,
+        borderRadius: 5,
+        color: '#fff',
+        fontWeight: 'bold'
+    },
     box: {
-        marginTop: 20,
         width: wp(100),
         alignItems: 'center',
         gap: 5

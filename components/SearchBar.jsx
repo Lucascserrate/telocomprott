@@ -8,11 +8,12 @@ import SearchIcon from '../assets/search.svg'
 import { useDispatch } from 'react-redux';
 import { getByName } from '../redux/actions';
 
-const SearchBar = () => {
+const SearchBar = ({ setCurrent }) => {
     const dispatch = useDispatch()
     const [input, setInput] = useState('')
 
     const handleInput = (input) => {
+        setCurrent(1)
         setInput(input)
         dispatch(getByName(input))
     }

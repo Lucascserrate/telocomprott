@@ -26,7 +26,7 @@ const Card = ({ id, title, images, price }) => {
                     <Text>{`$.${price}`}</Text>
                 </View>
             </View>
-            <TouchableOpacity onPress={handleNavigate}>
+            <TouchableOpacity onPress={handleNavigate} style={styles.arrowBox}>
                 <Image style={styles.arrow} source={require('../assets/arrowRight.png')} />
             </TouchableOpacity>
         </View>
@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
         paddingHorizontal: 14,
         paddingVertical: 4,
-        marginBottom: 10,
+        marginTop: 10,
         marginHorizontal: 10,
         borderRadius: 8,
         backgroundColor: '#fff'
@@ -60,9 +60,12 @@ const styles = StyleSheet.create({
         width: wp(60),
 
     },
+    arrowBox: {
+        paddingVertical: 5,
+    },
     arrow: {
-        height: 21,
-        width: 13
+        height: 20,
+        width: 12,
     }
 });
 

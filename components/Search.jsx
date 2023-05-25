@@ -7,9 +7,10 @@ import SearchBar from './SearchBar';
 import { colors } from '../utils/styles';
 import Back from '../assets/back-arrow.svg'
 import { useNavigate } from 'react-router-native';
+import { Image } from 'react-native-elements';
 
 
-const Search = ({ back, searchbar }) => {
+const Search = ({ back, searchbar, setCurrent, showFilters, setShowFilters }) => {
     const navigate = useNavigate()
     const handleNavigate = () => {
         navigate('/')
@@ -18,10 +19,14 @@ const Search = ({ back, searchbar }) => {
         <View style={styles.container}>
             {
                 back && <TouchableOpacity style={styles.box} onPress={handleNavigate}><Back height={24} width={25} /></TouchableOpacity>
+
             }
             {
-                searchbar && <SearchBar />
+                searchbar && <SearchBar setCurrent={setCurrent} />
             }
+            <TouchableOpacity onPress={() => setShowFilters(!showFilters)}>
+                <Image style={styles.filtersIcon} source={require('../assets/filters.png')} />
+            </TouchableOpacity>
         </View>
     );
 };
@@ -39,6 +44,11 @@ const styles = StyleSheet.create({
     },
     box: {
         paddingVertical: 5
+    },
+    filtersIcon: {
+        height: 25,
+        width: 25,
+        marginRight: 2,
     }
 });
 

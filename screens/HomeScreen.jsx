@@ -16,21 +16,21 @@ import Categories from '../components/Categories';
 
 const HomeScreen = () => {
     const dispatch = useDispatch()
-    const products = useSelector(state => state.products)
     const sortProducts = useSelector(state => state.sortProducts)
 
     useEffect(() => {
         dispatch(getProducts())
     }, [dispatch])
 
+    const [showFilters, setShowFilters] = useState(false)
     // Pagination
     const [current, setCurrent] = useState(1)
     const [perPage] = useState(5)
-    const max = Math.ceil(products.length / perPage);
+    const max = Math.ceil(sortProducts.length / perPage);
     return (
         <View style={styles.container}>
-            <Search searchbar={true} />
-            <Categories />
+            <Search searchbar={true} setCurrent={setCurrent} showFilters={showFilters} setShowFilters={setShowFilters} />
+            {showFilters && <Categories />}
             {
                 sortProducts?.slice((current - 1) * perPage, (current - 1) * perPage + perPage).map((e, i) => <Card key={i} id={e.id} title={e.title} images={e.images} price={e.price} />)
             }

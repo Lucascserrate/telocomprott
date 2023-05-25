@@ -52,7 +52,7 @@ const DetailScreen = () => {
                             <TouchableOpacity style={styles.webButton}>
                                 <Text style={styles.webText}>Sitio Web</Text>
                             </TouchableOpacity>
-                            <FavButton />
+                            <FavButton id={id} detail={detail} />
                         </View>
                         <Text style={styles.visit} >Si quieres saber mas visitanos en:</Text>
                         <TouchableOpacity>
@@ -139,7 +139,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         height: 50,
-        width: wp(50),
+        width: wp(55),
         borderRadius: 8,
         shadowColor: '#000000',
         shadowOffset: { width: 2, height: 2 },

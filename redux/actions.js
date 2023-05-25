@@ -9,8 +9,6 @@ export const CLEAN_DETAIL = 'CLEAN_DETAIL';
 export const GET_BY_NAME = 'GET_BY_NAME';
 export const GET_BY_CATEGORY = 'GET_BY_CATEGORY';
 
-
-
 export const getProducts = () => async dispatch => {
     try {
         let json = await axios.get(`https://dummyjson.com/products`)

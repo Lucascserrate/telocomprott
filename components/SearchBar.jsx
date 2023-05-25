@@ -1,5 +1,4 @@
 import { View, StyleSheet, TextInput } from 'react-native';
-import { useState } from 'react';
 import {
     widthPercentageToDP as wp,
     heightPercentageToDP as hp,
@@ -8,9 +7,8 @@ import SearchIcon from '../assets/search.svg'
 import { useDispatch } from 'react-redux';
 import { getByName } from '../redux/actions';
 
-const SearchBar = ({ setCurrent }) => {
+const SearchBar = ({ setCurrent, input, setInput }) => {
     const dispatch = useDispatch()
-    const [input, setInput] = useState('')
 
     const handleInput = (input) => {
         setCurrent(1)

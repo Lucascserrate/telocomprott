@@ -8,12 +8,21 @@ import { colors } from '../utils/styles';
 import Back from '../assets/back-arrow.svg'
 import { useNavigate } from 'react-router-native';
 import { Image } from 'react-native-elements';
+import { useDispatch } from 'react-redux';
+import { resetFilters } from '../redux/actions';
+import { useState } from 'react';
 
 
-const Search = ({ back, searchbar, filters, setCurrent, showFilters, setShowFilters }) => {
+const Search = ({ back, searchbar, reset, setCurrent }) => {
+    const [input, setInput] = useState('')
+    const dispatch = useDispatch()
     const navigate = useNavigate()
     const handleNavigate = () => {
         navigate('/')
+    }
+    const handleReset = () => {
+        dispatch(resetFilters())
+        setInput('')
     }
     return (
         <View style={styles.container}>
@@ -22,11 +31,11 @@ const Search = ({ back, searchbar, filters, setCurrent, showFilters, setShowFilt
 
             }
             {
-                searchbar && <SearchBar setCurrent={setCurrent} />
+                searchbar && <SearchBar setCurrent={setCurrent} input={input} setInput={setInput} />
             }
             {
-                filters && <TouchableOpacity onPress={() => setShowFilters(!showFilters)}>
-                    <Image style={styles.filtersIcon} source={require('../assets/filters.png')} />
+                reset && <TouchableOpacity onPress={handleReset}>
+                    <Image style={styles.reloadIcon} source={require('../assets/reload.png')} />
                 </TouchableOpacity>
             }
         </View>
@@ -47,10 +56,10 @@ const styles = StyleSheet.create({
     box: {
         paddingVertical: 5
     },
-    filtersIcon: {
-        height: 25,
-        width: 25,
-        marginRight: 2,
+    reloadIcon: {
+        height: 20,
+        width: 20,
+        marginRight: 5,
     }
 });
 

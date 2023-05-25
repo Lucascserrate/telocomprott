@@ -12,12 +12,15 @@ const Nav = () => {
     const goHome = () => {
         navigate('/')
     }
+    const goFav = () => {
+        navigate('/fav')
+    }
     return (
         <View style={styles.container}>
             <TouchableOpacity onPress={goHome}>
                 <Image source={require('../assets/home.png')} style={styles.img} />
             </TouchableOpacity>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={goFav}>
                 <Image source={require('../assets/heart.png')} style={styles.img} />
             </TouchableOpacity>
         </View>

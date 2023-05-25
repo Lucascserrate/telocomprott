@@ -8,6 +8,7 @@ export const REMOVE_FAVORITES = 'REMOVE_FAVORITES';
 export const CLEAN_DETAIL = 'CLEAN_DETAIL';
 export const GET_BY_NAME = 'GET_BY_NAME';
 export const GET_BY_CATEGORY = 'GET_BY_CATEGORY';
+export const RESET = 'RESET';
 
 export const getProducts = () => async dispatch => {
     try {
@@ -55,4 +56,8 @@ export const getByCategory = (value) => async dispatch => {
     } catch (error) {
         console.log(error);
     }
+}
+
+export const resetFilters = () => dispatch => {
+    return dispatch({ type: RESET })
 }

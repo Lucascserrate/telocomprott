@@ -22,7 +22,6 @@ const HomeScreen = () => {
         dispatch(getProducts())
     }, [dispatch])
 
-    const [showFilters, setShowFilters] = useState(false)
     const setData = () => {
         AsyncStorage.setItem('showFilters', showFilters.toString())
     }
@@ -32,10 +31,10 @@ const HomeScreen = () => {
     const max = Math.ceil(sortProducts.length / perPage);
     return (
         <View style={styles.container}>
-            <Search searchbar={true} filters={true} setCurrent={setCurrent} showFilters={showFilters} setShowFilters={setShowFilters} />
+            <Search searchbar={true} reset={true} setCurrent={setCurrent} />
             <View>
                 <ScrollView style={styles.scroll}>
-                    {showFilters && <Categories />}
+                    <Categories />
                     {
                         sortProducts?.slice((current - 1) * perPage, (current - 1) * perPage + perPage).map((e, i) => <Card key={i} id={e.id} title={e.title} images={e.images} price={e.price} />)
                     }

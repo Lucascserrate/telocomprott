@@ -34,6 +34,7 @@ const DetailScreen = () => {
                     </View>
                     <View style={styles.tag} >
                         <Text style={styles.text}>{detail?.category}</Text>
+                        <View style={styles.boxRow}><Text style={{ color: '#fff', fontWeight: 'bold' }}>{detail?.rating}</Text><Image style={styles.star} source={require('../assets/star.png')}></Image></View>
                     </View>
                     <View style={styles.box}>
                         <View style={styles.flexStart}>
@@ -91,8 +92,11 @@ const styles = StyleSheet.create({
         borderRadius: 12
     },
     tag: {
-        alignItems: 'flex-end',
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
         margin: 10,
+
     },
     text: {
         paddingHorizontal: 15,
@@ -101,6 +105,19 @@ const styles = StyleSheet.create({
         borderRadius: 5,
         color: '#fff',
         fontWeight: 'bold'
+    },
+    boxRow: {
+        flexDirection: 'row',
+        gap: 5,
+        backgroundColor: colors.bgDark,
+        paddingHorizontal: 15,
+        paddingVertical: 5,
+        borderRadius: 5,
+
+    },
+    star: {
+        height: 18,
+        width: 18
     },
     box: {
         width: wp(100),
@@ -125,7 +142,9 @@ const styles = StyleSheet.create({
 
     },
     description: {
-        marginHorizontal: 15
+        alignItems: 'flex-start',
+        width: wp(100),
+        paddingHorizontal: 25
     },
     buttons: {
         marginTop: 10,

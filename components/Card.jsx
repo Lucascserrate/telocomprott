@@ -1,9 +1,12 @@
-import { useEffect } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { useNavigate } from 'react-router-native';
 import { getById } from '../redux/actions';
 import { useDispatch } from 'react-redux';
 import { Image } from 'react-native-elements';
+import {
+    widthPercentageToDP as wp,
+    heightPercentageToDP as hp,
+} from 'react-native-responsive-screen';
 
 const Card = ({ id, title, images, price }) => {
     const dispatch = useDispatch();
@@ -26,7 +29,6 @@ const Card = ({ id, title, images, price }) => {
             <TouchableOpacity onPress={handleNavigate}>
                 <Image style={styles.arrow} source={require('../assets/arrowRight.png')} />
             </TouchableOpacity>
-
         </View>
     );
 };
@@ -36,9 +38,9 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-between',
-        paddingHorizontal: 12,
+        paddingHorizontal: 14,
         paddingVertical: 4,
-        marginTop: 10,
+        marginBottom: 10,
         marginHorizontal: 10,
         borderRadius: 8,
         backgroundColor: '#fff'
@@ -54,7 +56,9 @@ const styles = StyleSheet.create({
     },
     title: {
         fontWeight: 'bold',
-        fontSize: 15
+        fontSize: 15,
+        width: wp(60),
+
     },
     arrow: {
         height: 21,

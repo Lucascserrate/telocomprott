@@ -7,6 +7,7 @@ export const ADD_FAVORITES = 'ADD_FAVORITES';
 export const REMOVE_FAVORITES = 'REMOVE_FAVORITES';
 export const CLEAN_DETAIL = 'CLEAN_DETAIL';
 export const GET_BY_NAME = 'GET_BY_NAME';
+export const GET_BY_CATEGORY = 'GET_BY_CATEGORY';
 
 
 
@@ -44,6 +45,15 @@ export const getByName = (value) => async dispatch => {
     try {
         let json = await axios.get(`https://dummyjson.com/products/search?q=${value}`)
         return dispatch({ type: GET_BY_NAME, payload: json.data })
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+export const getByCategory = (value) => async dispatch => {
+    try {
+        let json = await axios.get(`https://dummyjson.com/products/category/${value}`)
+        return dispatch({ type: GET_BY_CATEGORY, payload: json.data })
     } catch (error) {
         console.log(error);
     }

@@ -1,4 +1,4 @@
-import { ADD_FAVORITES, CLEAN_DETAIL, GET_BY_ID, GET_BY_NAME, GET_FAVORITES, GET_PRODUCTS, REMOVE_FAVORITES } from './actions';
+import { ADD_FAVORITES, CLEAN_DETAIL, GET_BY_CATEGORY, GET_BY_ID, GET_BY_NAME, GET_FAVORITES, GET_PRODUCTS, REMOVE_FAVORITES } from './actions';
 
 const initialState = {
     products: [],
@@ -44,7 +44,12 @@ const rootReducer = (state = initialState, action) => {
         case GET_BY_NAME:
             return {
                 ...state,
-                sortProducts: action.payload
+                sortProducts: action.payload.products
+            }
+        case GET_BY_CATEGORY:
+            return {
+                ...state,
+                sortProducts: action.payload.products
             }
         default: return state
     }

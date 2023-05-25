@@ -12,16 +12,16 @@ import Pagination from '../components/Pagination';
 import Card from '../components/Card';
 import { colors } from '../utils/styles';
 import SearchModal from '../components/SearchModal';
+import Categories from '../components/Categories';
 
 const HomeScreen = () => {
     const dispatch = useDispatch()
     const products = useSelector(state => state.products)
-    // const sortProducts = useSelector(state => state.sortProducts)
+    const sortProducts = useSelector(state => state.sortProducts)
 
     useEffect(() => {
         dispatch(getProducts())
     }, [dispatch])
-    // console.log(sortProducts);
 
     // Pagination
     const [current, setCurrent] = useState(1)
@@ -30,8 +30,9 @@ const HomeScreen = () => {
     return (
         <View style={styles.container}>
             <Search searchbar={true} />
+            <Categories />
             {
-                products?.slice((current - 1) * perPage, (current - 1) * perPage + perPage).map((e, i) => <Card key={i} id={e.id} title={e.title} images={e.images} price={e.price} />)
+                sortProducts?.slice((current - 1) * perPage, (current - 1) * perPage + perPage).map((e, i) => <Card key={i} id={e.id} title={e.title} images={e.images} price={e.price} />)
             }
             <Pagination current={current} setCurrent={setCurrent} max={max} />
 
@@ -46,11 +47,6 @@ const styles = StyleSheet.create({
         width: wp(100),
         backgroundColor: colors.bgLight
     },
-    flat: {
-        alignItems: 'center',
-        width: wp(100),
-    },
-
 });
 
 export default HomeScreen;

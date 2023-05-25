@@ -26,40 +26,42 @@ const DetailScreen = () => {
     return (
         <View style={styles.container}>
             <Search back={true} />
-            <ScrollView>
-                <Text style={styles.title}>{detail?.title}</Text>
-                <View style={styles.centerImage}>
-                    <Image style={styles.img} resizeMode='contain' source={{ uri: detail?.thumbnail }} />
-                </View>
-                <View style={styles.box}>
-                    <View style={styles.flexStart}>
-                        <View style={styles.row}>
-                            <Text style={styles.rowKey}>Precio:</Text>
-                            <Text style={styles.rowValue}>$.{detail?.price}</Text>
-                        </View>
-                        <View style={styles.row}>
-                            <Text style={styles.rowKey}>Stock:</Text>
-                            <Text style={styles.rowValue}>{detail?.stock}</Text>
-                        </View>
-                        <View style={styles.row}>
-                            <Text style={styles.rowKey}>Categoria:</Text>
-                            <Text style={styles.rowValue}>{detail?.category}</Text>
-                        </View>
-                        <Text style={styles.rowKey}>Descripcion:</Text>
+            <View>
+                <ScrollView style={styles.scroll} showsVerticalScrollIndicator={false}>
+                    <Text style={styles.title}>{detail?.title}</Text>
+                    <View style={styles.centerImage}>
+                        <Image style={styles.img} resizeMode='contain' source={{ uri: detail?.thumbnail }} />
                     </View>
-                    <Text style={styles.description}>{detail?.description}</Text>
-                    <View style={styles.buttons}>
-                        <TouchableOpacity style={styles.webButton}>
-                            <Text style={styles.webText}>Sitio Web</Text>
+                    <View style={styles.box}>
+                        <View style={styles.flexStart}>
+                            <View style={styles.row}>
+                                <Text style={styles.rowKey}>Precio:</Text>
+                                <Text style={styles.rowValue}>$.{detail?.price}</Text>
+                            </View>
+                            <View style={styles.row}>
+                                <Text style={styles.rowKey}>Stock:</Text>
+                                <Text style={styles.rowValue}>{detail?.stock}</Text>
+                            </View>
+                            <View style={styles.row}>
+                                <Text style={styles.rowKey}>Categoria:</Text>
+                                <Text style={styles.rowValue}>{detail?.category}</Text>
+                            </View>
+                            <Text style={styles.rowKey}>Descripcion:</Text>
+                        </View>
+                        <Text style={styles.description}>{detail?.description}</Text>
+                        <View style={styles.buttons}>
+                            <TouchableOpacity style={styles.webButton}>
+                                <Text style={styles.webText}>Sitio Web</Text>
+                            </TouchableOpacity>
+                            <FavButton />
+                        </View>
+                        <Text style={styles.visit} >Si quieres saber mas visitanos en:</Text>
+                        <TouchableOpacity>
+                            <Text style={styles.brand}>www.{brand}.com</Text>
                         </TouchableOpacity>
-                        <FavButton />
                     </View>
-                    <Text style={styles.visit} >Si quieres saber mas visitanos en:</Text>
-                    <TouchableOpacity>
-                        <Text style={styles.brand}>www.{brand}.com</Text>
-                    </TouchableOpacity>
-                </View>
-            </ScrollView>
+                </ScrollView>
+            </View>
             <Nav />
         </View>
     );
@@ -70,6 +72,9 @@ const styles = StyleSheet.create({
         height: hp(100),
         width: wp(100),
         backgroundColor: colors.bgLight
+    },
+    scroll: {
+        height: hp(80)
     },
     title: {
         fontSize: 20,

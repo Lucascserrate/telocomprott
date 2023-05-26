@@ -2,7 +2,10 @@ import { View, Text, StyleSheet, TouchableOpacity, ScrollView } from 'react-nati
 import { colors } from '../utils/styles';
 import { useDispatch } from 'react-redux';
 import { getByCategory } from '../redux/actions';
-import { useEffect } from 'react';
+import {
+    widthPercentageToDP as wp,
+    heightPercentageToDP as hp,
+} from 'react-native-responsive-screen';
 
 const categories = [
     'smartphones',
@@ -20,7 +23,7 @@ const Categories = ({ setCurrent }) => {
     }
     return (
         <View style={styles.container}>
-            <ScrollView contentContainerStyle={styles.scroll} horizontal={true} showsHorizontalScrollIndicator={false}>
+            <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
                 {
                     categories?.map(e => (
                         <TouchableOpacity onPress={() => setCategory(e)} style={styles.tag} key={e}>
@@ -40,8 +43,6 @@ const styles = StyleSheet.create({
         paddingTop: 10,
         paddingBottom: 2,
     },
-    scroll: {
-    },
     tag: {
         backgroundColor: colors.bgDark,
         borderRadius: 5,
@@ -52,7 +53,8 @@ const styles = StyleSheet.create({
 
     },
     text: {
-        color: '#fff'
+        color: '#fff',
+        fontSize: hp(1.85)
     }
 });
 

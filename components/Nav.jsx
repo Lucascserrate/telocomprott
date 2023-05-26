@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
         justifyContent: 'space-around',
         alignItems: 'center',
         width: wp(100),
-        height: 55,
+        height: hp(7.2),
         backgroundColor: colors.bgDark,
         position: 'absolute',
         bottom: 0

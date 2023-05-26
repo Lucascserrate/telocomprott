@@ -12,8 +12,7 @@ export default function Main() {
     // clean()
     getFavorites()
       .then((value) => {
-        !value ? setFavorites([]) :
-          console.log(value);
+        !value && setFavorites([])
       })
     /*     getFavorites()
           .then((value) => {

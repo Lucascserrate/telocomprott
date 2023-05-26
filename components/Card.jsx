@@ -23,11 +23,11 @@ const Card = ({ id, title, images, price }) => {
                 <Image style={styles.img} source={{ uri: images[0] }} resizeMode='contain' />
                 <View>
                     <Text style={styles.title}>{title}</Text>
-                    <Text>{`$.${price}`}</Text>
+                    <Text style={styles.price}>{`$.${price}`}</Text>
                 </View>
             </View>
             <TouchableOpacity onPress={handleNavigate} style={styles.arrowBox}>
-                <Image style={styles.arrow} source={require('../assets/arrowRight.png')} />
+                <Image resizeMode='contain' style={styles.arrow} source={require('../assets/arrowRight.png')} />
             </TouchableOpacity>
         </View>
     );
@@ -56,16 +56,20 @@ const styles = StyleSheet.create({
     },
     title: {
         fontWeight: 'bold',
-        fontSize: 15,
+        fontSize: hp(2),
         width: wp(60),
 
+    },
+    price: {
+        fontSize: hp(1.85),
     },
     arrowBox: {
         paddingVertical: 5,
     },
     arrow: {
         height: 20,
-        width: 12,
+        height: hp(2.7),
+        width: wp(3.7),
     }
 });
 

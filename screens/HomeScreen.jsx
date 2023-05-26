@@ -33,7 +33,9 @@ const HomeScreen = () => {
                     <Categories setCurrent={setCurrent} />
                     {
                         sortProducts.length
-                            ? sortProducts.slice((current - 1) * perPage, (current - 1) * perPage + perPage).map((e, i) => <Card key={i} id={e.id} title={e.title} images={e.images} price={e.price} />)
+                            ? sortProducts.slice((current - 1) * perPage, (current - 1) * perPage + perPage).map((e, i) => (
+                                <Card key={i} id={e.id} title={e.title} images={e.images} price={e.price} />
+                            ))
                             : <Text style={styles.notFound}>No se encontraron resultados</Text>
                     }
                 </ScrollView>

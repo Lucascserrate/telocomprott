@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
     tag: {
         backgroundColor: colors.bgDark,
         borderRadius: 5,
-        paddingHorizontal: 15,
+        paddingHorizontal: 16,
         paddingVertical: 5,
         marginRight: 8,
         flexDirection: 'row',

@@ -9,7 +9,7 @@ import Nav from '../components/Nav';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-native';
 import axios from 'axios';
-import FavButton from '../components/favButton';
+import FavButton from '../components/FavButton';
 import { colors } from '../utils/styles';
 import FavAlert from '../components/FavAlert';
 
@@ -37,7 +37,10 @@ const DetailScreen = () => {
                     </View>
                     <View style={styles.tag} >
                         <Text style={styles.text}>{detail?.category}</Text>
-                        <View style={styles.boxRow}><Text style={{ color: '#fff', fontWeight: 'bold' }}>{detail?.rating}</Text><Image style={styles.star} source={require('../assets/star.png')}></Image></View>
+                        <View style={styles.boxRow}>
+                            <Text style={{ color: '#fff', fontWeight: 'bold', fontSize: hp(1.85) }}>{detail?.rating}</Text>
+                            <Image resizeMode='contain' style={styles.star} source={require('../assets/star.png')} />
+                        </View>
                     </View>
                     <View style={styles.box}>
                         <View style={styles.flexStart}>
@@ -80,7 +83,7 @@ const styles = StyleSheet.create({
         height: hp(80)
     },
     title: {
-        fontSize: 20,
+        fontSize: hp(3),
         fontWeight: 'bold',
         margin: 15
     },
@@ -98,8 +101,9 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
-        margin: 10,
-
+        marginVertical: 10,
+        width: wp(96),
+        alignSelf: 'center',
     },
     text: {
         paddingHorizontal: 15,
@@ -107,10 +111,12 @@ const styles = StyleSheet.create({
         backgroundColor: colors.bgDark,
         borderRadius: 5,
         color: '#fff',
-        fontWeight: 'bold'
+        fontWeight: 'bold',
+        fontSize: hp(1.85)
     },
     boxRow: {
         flexDirection: 'row',
+        alignItems: 'center',
         gap: 5,
         backgroundColor: colors.bgDark,
         paddingHorizontal: 15,
@@ -119,8 +125,8 @@ const styles = StyleSheet.create({
 
     },
     star: {
-        height: 18,
-        width: 18
+        height: hp(2.5),
+        width: wp(4.6),
     },
     box: {
         width: wp(100),
@@ -137,17 +143,19 @@ const styles = StyleSheet.create({
         gap: 5,
     },
     rowKey: {
-        color: '#686868'
+        color: '#686868',
+        fontSize: hp(1.85)
     },
     rowValue: {
-        fontSize: 18,
+        fontSize: hp(2.4),
         color: colors.secundary
 
     },
     description: {
         alignItems: 'flex-start',
         width: wp(100),
-        paddingHorizontal: 25
+        paddingHorizontal: 25,
+        fontSize: hp(1.85)
     },
     buttons: {
         marginTop: 10,
@@ -160,7 +168,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff',
         justifyContent: 'center',
         alignItems: 'center',
-        height: 50,
+        height: hp(6.52),
         width: wp(55),
         borderRadius: 8,
         shadowColor: '#000000',
@@ -171,15 +179,19 @@ const styles = StyleSheet.create({
     },
     webText: {
         fontWeight: 'bold',
-        color: colors.bgDark
+        color: colors.bgDark,
+        fontSize: hp(1.85)
+
     },
     visit: {
         marginTop: 15,
-        fontSize: 13,
+        fontSize: hp(1.7),
         color: '#454545'
     },
     brand: {
-        color: colors.secundary
+        color: colors.secundary,
+        fontSize: hp(1.85)
+
     }
 
 });

@@ -60,11 +60,11 @@ const styles = StyleSheet.create({
     },
     title: {
         fontWeight: '500',
-        fontSize: 13,
+        fontSize: hp(1.85)
     },
     price: {
         fontWeight: 'bold',
-        fontSize: 18,
+        fontSize: hp(2.4),
 
     },
     buttonBox: {
@@ -75,7 +75,7 @@ const styles = StyleSheet.create({
     buttonText: {
         backgroundColor: colors.bgDark,
         color: '#fff',
-        fontSize: 15,
+        fontSize: hp(2),
         paddingVertical: 8,
         paddingHorizontal: 20,
         borderRadius: 5,
@@ -85,7 +85,7 @@ const styles = StyleSheet.create({
     buttonClose: {
         backgroundColor: colors.bgDark,
         color: '#fff',
-        fontSize: 15,
+        fontSize: hp(2),
         paddingVertical: 8,
         paddingHorizontal: 12,
         borderRadius: 5,

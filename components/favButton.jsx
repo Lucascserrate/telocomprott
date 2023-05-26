@@ -34,8 +34,8 @@ const FavButton = ({ detail, setAlert }) => {
         <TouchableOpacity style={styles.container} onPress={handleAdd}>
             {
                 toggle
-                    ? <Image style={styles.img} source={require('../assets/favFull.png')} />
-                    : <Image style={styles.img} source={require('../assets/favEmpty.png')} />
+                    ? <Image style={styles.img} source={require('../assets/favFull.png')} resizeMode='contain' />
+                    : <Image style={styles.img} source={require('../assets/favEmpty.png')} resizeMode='contain' />
             }
         </TouchableOpacity>
     );
@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff',
         justifyContent: 'center',
         alignItems: 'center',
-        height: 50,
+        height: hp(6.52),
         width: wp(27),
         borderRadius: 8,
         shadowColor: '#000000',
@@ -57,8 +57,8 @@ const styles = StyleSheet.create({
         elevation: 5,
     },
     img: {
-        height: 25,
-        width: 25
+        height: hp(4),
+        width: wp(6.4),
     }
 });
 

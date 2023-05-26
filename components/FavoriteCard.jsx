@@ -86,11 +86,11 @@ const styles = StyleSheet.create({
         backgroundColor: colors.bgDark,
         color: '#fff',
         fontSize: hp(2),
-        paddingVertical: 8,
+        paddingTop: 6,
+        paddingBottom: 10,
         paddingHorizontal: 12,
         borderRadius: 5,
-        textAlign: 'center',
-
+        alignSelf: 'center'
     },
 });
 

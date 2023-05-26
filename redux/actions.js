@@ -35,6 +35,10 @@ export const getByName = (value) => async dispatch => {
 
 export const getByCategory = (value) => async dispatch => {
     try {
+        if (value === 'Celulares') value = 'smartphones';
+        if (value === 'Fragancias') value = 'fragrances';
+        if (value === 'Comestibles') value = 'groceries';
+        if (value === 'Hogar') value = 'home-decoration';
         let json = await axios.get(`https://dummyjson.com/products/category/${value}`)
         return dispatch({ type: GET_BY_CATEGORY, payload: json.data })
     } catch (error) {

@@ -8,12 +8,12 @@ import {
 } from 'react-native-responsive-screen';
 
 const categories = [
-    'smartphones',
-    'laptops',
-    'fragrances',
-    'skincare',
-    'groceries',
-    'home-decoration',
+    'Celulares',
+    'Laptops',
+    'Fragancias',
+    'Skincare',
+    'Comestibles',
+    'Hogar',
 ]
 const Categories = ({ setCurrent }) => {
     const dispatch = useDispatch()

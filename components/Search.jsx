@@ -18,7 +18,7 @@ const Search = ({ back, searchbar, reset, setCurrent }) => {
     const dispatch = useDispatch()
     const navigate = useNavigate()
     const handleNavigate = () => {
-        navigate('/')
+        navigate('/home')
     }
     const handleReset = () => {
         dispatch(resetFilters())

@@ -5,6 +5,7 @@ import DetailScreen from './screens/DetailScreen'
 import FavoriteScreen from './screens/FavoriteScreen'
 import { useEffect } from 'react'
 import { clean, getFavorites, setFavorites } from './utils/storage'
+import Welcome from './screens/Welcome'
 
 export default function Main() {
 
@@ -22,8 +23,9 @@ export default function Main() {
   return (
     <View>
       <Routes>
-        <Route path='/' element={<HomeScreen />} />
-        <Route path='/:id' element={<DetailScreen />} />
+        <Route path='/' element={<Welcome />} />
+        <Route path='/home' element={<HomeScreen />} />
+        <Route path='/home/:id' element={<DetailScreen />} />
         <Route path='/fav' element={<FavoriteScreen />} />
       </Routes>
     </View>

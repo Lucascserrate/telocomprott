@@ -10,7 +10,7 @@ import { useNavigate } from 'react-router-native';
 const FavoriteCard = ({ id, title, price, images, handleRemove }) => {
     const navigate = useNavigate()
     const goProduct = () => {
-        navigate(`/${id}`)
+        navigate(`/home/${id}`)
     }
     return (
         <View style={styles.container}>

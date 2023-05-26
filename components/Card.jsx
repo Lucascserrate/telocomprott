@@ -15,7 +15,7 @@ const Card = ({ id, title, images, price }) => {
 
     const handleNavigate = () => {
         dispatch(getById(id))
-        navigate(`/${id}`)
+        navigate(`/home/${id}`)
     }
     return (
         <View style={styles.container}>
@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
         paddingHorizontal: 14,
         paddingVertical: 4,
-        marginTop: 10,
+        marginTop: hp(1.3),
         marginHorizontal: wp(3),
         borderRadius: 8,
         backgroundColor: '#fff'
@@ -51,8 +51,11 @@ const styles = StyleSheet.create({
         gap: 10
     },
     img: {
-        height: hp(11.15),
+        height: hp(10),
         width: wp(21.7),
+        borderRadius: 8,
+        marginVertical: 4,
+
     },
     title: {
         fontWeight: 'bold',

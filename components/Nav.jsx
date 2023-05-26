@@ -10,7 +10,7 @@ import { useNavigate } from 'react-router-native';
 const Nav = () => {
     const navigate = useNavigate();
     const goHome = () => {
-        navigate('/')
+        navigate('/home')
     }
     const goFav = () => {
         navigate('/fav')

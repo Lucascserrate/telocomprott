@@ -6,7 +6,6 @@ import {
 import Search from '../components/Search';
 import Nav from '../components/Nav';
 import { colors } from '../utils/styles';
-import { useSelector } from 'react-redux';
 import FavoriteCard from '../components/FavoriteCard';
 import { getFavorites, removeFavorite } from '../utils/storage';
 import { useEffect, useState } from 'react';

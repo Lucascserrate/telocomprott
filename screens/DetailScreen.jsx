@@ -11,9 +11,11 @@ import { useParams } from 'react-router-native';
 import axios from 'axios';
 import FavButton from '../components/favButton';
 import { colors } from '../utils/styles';
+import FavAlert from '../components/FavAlert';
 
 const DetailScreen = () => {
     const [detail, setDetail] = useState()
+    const [alert, setAlert] = useState(false)
     const { id } = useParams()
 
 
@@ -26,6 +28,7 @@ const DetailScreen = () => {
     return (
         <View style={styles.container}>
             <Search back={true} />
+            {alert && <FavAlert />}
             <View>
                 <ScrollView style={styles.scroll} showsVerticalScrollIndicator={false}>
                     <Text style={styles.title}>{detail?.title}</Text>
@@ -53,7 +56,7 @@ const DetailScreen = () => {
                             <TouchableOpacity style={styles.webButton}>
                                 <Text style={styles.webText}>Sitio Web</Text>
                             </TouchableOpacity>
-                            <FavButton detail={detail} />
+                            <FavButton detail={detail} setAlert={setAlert} />
                         </View>
                         <Text style={styles.visit} >Si quieres saber mas visitanos en:</Text>
                         <TouchableOpacity>

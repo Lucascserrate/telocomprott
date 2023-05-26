@@ -1,4 +1,4 @@
-import { View, StyleSheet, Image, TouchableOpacity } from 'react-native';
+import { View, StyleSheet, Image, TouchableOpacity, Text } from 'react-native';
 import {
     widthPercentageToDP as wp,
     heightPercentageToDP as hp,
@@ -17,11 +17,14 @@ const Nav = () => {
     }
     return (
         <View style={styles.container}>
-            <TouchableOpacity onPress={goHome}>
+            <TouchableOpacity onPress={goHome} style={styles.box}>
                 <Image source={require('../assets/home.png')} style={styles.img} />
+                <Text style={styles.dot}>━</Text>
             </TouchableOpacity>
-            <TouchableOpacity onPress={goFav}>
+            <Image source={require('../assets/phone.png')} style={styles.logo} />
+            <TouchableOpacity onPress={goFav} style={styles.box}>
                 <Image source={require('../assets/heart.png')} style={styles.img} />
+                <Text style={styles.dot}>━</Text>
             </TouchableOpacity>
         </View>
     );
@@ -39,9 +42,23 @@ const styles = StyleSheet.create({
         position: 'absolute',
         bottom: 0
     },
+    box: {
+        alignContent: 'center',
+        gap: 2,
+        paddingTop: 10
+    },
     img: {
         height: 22,
         width: 22,
+    },
+    dot: {
+        alignSelf: 'center',
+        color: '#fff',
+        lineHeight: 12
+    },
+    logo: {
+        height: 30,
+        width: 30,
     }
 });
 

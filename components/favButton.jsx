@@ -1,18 +1,33 @@
 //import liraries
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { StyleSheet, TouchableOpacity } from 'react-native';
 import { Image } from 'react-native-elements';
 import {
     widthPercentageToDP as wp,
     heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
-import { addFavorites } from '../utils/storage';
+import { addFavorites, getFavorites } from '../utils/storage';
 
-const FavButton = ({ detail }) => {
-    const [toggle, setToggle] = useState(false);
+const FavButton = ({ detail, setAlert }) => {
+    const [favorites, setFavorites] = useState()
 
+    const parse = () => {
+        getFavorites().then(value => setFavorites(JSON.parse(value)))
+    }
+    useEffect(() => {
+        parse()
+    }, [favorites])
+    const timeout = (toggle) => {
+        if (!toggle) {
+            setAlert(true)
+            setTimeout(() => {
+                setAlert(false)
+            }, 2000)
+        }
+    }
+    const toggle = favorites?.find(e => e.id === detail?.id);
     const handleAdd = async () => {
-        setToggle(!toggle)
+        timeout(toggle)
         await addFavorites(detail)
     }
     return (

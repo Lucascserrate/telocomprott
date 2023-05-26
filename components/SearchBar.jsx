@@ -37,17 +37,12 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         gap: 10,
-        paddingHorizontal: 20,
-        paddingVertical: 5,
-        elevation: 5,
-        shadowColor: '#000',
-        shadowOffset: {
-            width: 0,
-            height: 2,
-        },
-        shadowOpacity: 0.2,
-        shadowRadius: 2,
+        paddingHorizontal: wp(5),
+        paddingVertical: hp(0.7),
     },
+    input: {
+        fontSize: hp(1.85)
+    }
 });
 
 export default SearchBar;

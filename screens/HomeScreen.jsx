@@ -54,7 +54,7 @@ const styles = StyleSheet.create({
         backgroundColor: colors.bgLight
     },
     scroll: {
-        height: hp(73)
+        height: hp(73.1)
     },
     notFound: {
         margin: 20,

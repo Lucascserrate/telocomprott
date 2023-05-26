@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
         paddingHorizontal: 14,
         paddingVertical: 4,
         marginTop: 10,
-        marginHorizontal: 10,
+        marginHorizontal: wp(3),
         borderRadius: 8,
         backgroundColor: '#fff'
     },
@@ -57,7 +57,7 @@ const styles = StyleSheet.create({
     title: {
         fontWeight: 'bold',
         fontSize: hp(2),
-        width: wp(60),
+        width: wp(50),
 
     },
     price: {

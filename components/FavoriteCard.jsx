@@ -49,9 +49,8 @@ const styles = StyleSheet.create({
     },
     img: {
         borderRadius: 8,
-
-        height: 160,
-        width: 120,
+        height: hp(21),
+        width: wp(31),
     },
     between: {
         justifyContent: 'space-between'

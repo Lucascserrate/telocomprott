@@ -12,10 +12,11 @@ const categories = [
     'groceries',
     'home-decoration',
 ]
-const Categories = () => {
+const Categories = ({ setCurrent }) => {
     const dispatch = useDispatch()
     const setCategory = (category) => {
         dispatch(getByCategory(category))
+        setCurrent(1)
     }
     return (
         <View style={styles.container}>

@@ -51,8 +51,8 @@ const styles = StyleSheet.create({
         gap: 10
     },
     img: {
-        height: 85,
-        width: 85,
+        height: hp(11.15),
+        width: wp(21.7),
     },
     title: {
         fontWeight: 'bold',

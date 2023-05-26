@@ -1,4 +1,4 @@
-import { View, StyleSheet, ScrollView } from 'react-native';
+import { View, StyleSheet, ScrollView, Text } from 'react-native';
 import {
     widthPercentageToDP as wp,
     heightPercentageToDP as hp,
@@ -30,9 +30,11 @@ const HomeScreen = () => {
             <Search searchbar={true} reset={true} setCurrent={setCurrent} />
             <View>
                 <ScrollView style={styles.scroll}>
-                    <Categories />
+                    <Categories setCurrent={setCurrent} />
                     {
-                        sortProducts?.slice((current - 1) * perPage, (current - 1) * perPage + perPage).map((e, i) => <Card key={i} id={e.id} title={e.title} images={e.images} price={e.price} />)
+                        sortProducts.length
+                            ? sortProducts.slice((current - 1) * perPage, (current - 1) * perPage + perPage).map((e, i) => <Card key={i} id={e.id} title={e.title} images={e.images} price={e.price} />)
+                            : <Text style={styles.notFound}>No se encontraron resultados</Text>
                     }
                 </ScrollView>
             </View>
@@ -52,6 +54,11 @@ const styles = StyleSheet.create({
     scroll: {
         height: hp(73)
     },
+    notFound: {
+        margin: 20,
+        fontSize: 18,
+        color: '#686868'
+    }
 });
 
 export default HomeScreen;

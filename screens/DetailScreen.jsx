@@ -90,7 +90,7 @@ const styles = StyleSheet.create({
 
     },
     img: {
-        height: 250,
+        height: hp(33),
         width: wp(96),
         borderRadius: 12
     },

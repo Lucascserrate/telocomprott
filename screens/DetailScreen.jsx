@@ -80,7 +80,8 @@ const styles = StyleSheet.create({
         backgroundColor: colors.bgLight
     },
     scroll: {
-        height: hp(80)
+        height: hp(80),
+        paddingBottom: 10
     },
     title: {
         fontSize: hp(3),

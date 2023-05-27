@@ -34,10 +34,11 @@ const styles = StyleSheet.create({
     container: {
         flexDirection: 'row',
         paddingHorizontal: 15,
+        paddingBottom: hp(2.8),
+        paddingTop: hp(0.7),
         justifyContent: 'space-around',
         alignItems: 'center',
         width: wp(100),
-        height: hp(7.2),
         backgroundColor: colors.bgDark,
         position: 'absolute',
         bottom: 0

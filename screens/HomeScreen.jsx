@@ -1,4 +1,4 @@
-import { View, StyleSheet, ScrollView, Text } from 'react-native';
+import { View, StyleSheet, ScrollView, Text, Dimensions } from 'react-native';
 import {
     widthPercentageToDP as wp,
     heightPercentageToDP as hp,

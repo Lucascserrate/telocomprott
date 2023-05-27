@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
         gap: 5,
         marginTop: 30,
         position: 'absolute',
-        bottom: hp(8.5)
+        bottom: hp(11)
     },
     img: {
         height: 25,

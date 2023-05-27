@@ -27,7 +27,9 @@ const Search = ({ back, searchbar, reset, setCurrent }) => {
     return (
         <View style={styles.container}>
             {
-                back && <TouchableOpacity style={styles.box} onPress={handleNavigate}><Back height={24} width={25} /></TouchableOpacity>
+                back && <TouchableOpacity style={styles.box} onPress={handleNavigate}>
+                    <Back height={24} width={25} />
+                </TouchableOpacity>
 
             }
             {
@@ -46,7 +48,7 @@ const styles = StyleSheet.create({
     container: {
         flexDirection: 'row',
         paddingHorizontal: 15,
-        paddingTop: hp(4),
+        paddingVertical: hp(1.5),
         paddingBottom: 10,
         justifyContent: 'space-between',
         alignItems: 'center',

@@ -17,6 +17,7 @@ import {
   Poppins_600SemiBold,
   Poppins_700Bold,
 } from '@expo-google-fonts/poppins';
+import { colors } from './utils/styles'
 
 
 
@@ -36,11 +37,15 @@ export default function App() {
   //>
   return (
     <>
-      <StatusBar style='auto' />
+      <StatusBar style='auto' backgroundColor={colors.bgDark} />
       <Provider store={store}>
-        <NativeRouter>
-          <Main />
-        </NativeRouter>
+        <SafeAreaProvider >
+          <SafeAreaView>
+            <NativeRouter>
+              <Main />
+            </NativeRouter>
+          </SafeAreaView>
+        </SafeAreaProvider>
       </Provider>
     </>
   )

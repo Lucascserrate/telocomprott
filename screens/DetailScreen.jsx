@@ -81,7 +81,6 @@ const styles = StyleSheet.create({
     },
     scroll: {
         height: hp(80),
-        paddingBottom: 10
     },
     title: {
         fontSize: hp(3),
@@ -191,7 +190,8 @@ const styles = StyleSheet.create({
     },
     brand: {
         color: colors.secundary,
-        fontSize: hp(1.85)
+        fontSize: hp(1.85),
+        paddingBottom: 10
 
     }
 

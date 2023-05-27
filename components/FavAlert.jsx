@@ -1,5 +1,6 @@
 import { View, Text, StyleSheet } from 'react-native';
 import { Image } from 'react-native-elements';
+import { heightPercentageToDP as hp } from 'react-native-responsive-screen';
 
 const FavAlert = () => {
     return (
@@ -15,7 +16,7 @@ const FavAlert = () => {
 const styles = StyleSheet.create({
     container: {
         position: 'absolute',
-        top: 60,
+        top: hp(4),
         left: 0,
         right: 0,
         justifyContent: 'center',

@@ -7,7 +7,7 @@ const FavAlert = () => {
         <View style={styles.container}>
             <View style={styles.box}>
                 <Text style={styles.text}>Añadido a favoritos</Text>
-                <Image style={styles.img} source={require('../assets/check.png')} />
+                <Image style={styles.img} source={require('../assets/check.gif')} />
             </View>
         </View>
     );
@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
     },
     box: {
         paddingVertical: 8,
-        paddingHorizontal: 15,
+        paddingHorizontal: 10,
         borderRadius: 8,
         backgroundColor: '#fff',
         shadowColor: '#000000',
@@ -38,10 +38,9 @@ const styles = StyleSheet.create({
         gap: 6
     },
     img: {
-        height: 13,
-        width: 15,
+        height: 25,
+        width: 25,
     },
-
 });
 
 export default FavAlert;

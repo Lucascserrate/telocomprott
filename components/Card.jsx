@@ -67,7 +67,7 @@ const styles = StyleSheet.create({
         fontSize: hp(1.85),
     },
     arrowBox: {
-        paddingVertical: 5,
+        padding: 5,
     },
     arrow: {
         height: 20,

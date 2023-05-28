@@ -21,11 +21,11 @@ const Pagination = ({ max }) => {
     }
     return (
         <View style={styles.container}>
-            <TouchableOpacity onPress={previous}><Image style={styles.img} source={require('../assets/arrowLeft.png')} /></TouchableOpacity>
+            <TouchableOpacity onPress={previous} style={styles.imgBox}><Image style={styles.img} source={require('../assets/arrowLeft.png')} /></TouchableOpacity>
             <Text style={styles.text}>{current}</Text>
             <Text style={styles.text}>de</Text>
             <Text style={styles.text}>{max}</Text>
-            <TouchableOpacity onPress={next}><Image style={styles.img} source={require('../assets/arrowRight.png')} /></TouchableOpacity>
+            <TouchableOpacity onPress={next} style={styles.imgBox}><Image style={styles.img} source={require('../assets/arrowRight.png')} /></TouchableOpacity>
         </View>
     );
 };
@@ -40,6 +40,9 @@ const styles = StyleSheet.create({
         marginTop: 30,
         position: 'absolute',
         bottom: hp(11)
+    },
+    imgBox: {
+        paddingHorizontal: 5,
     },
     img: {
         height: 25,

@@ -13,7 +13,7 @@ import { resetFilters } from '../redux/actions';
 import { useState } from 'react';
 
 
-const Search = ({ back, searchbar, reset, setCurrent }) => {
+const Search = ({ back, searchbar, reset }) => {
     const [input, setInput] = useState('')
     const dispatch = useDispatch()
     const navigate = useNavigate()
@@ -33,7 +33,7 @@ const Search = ({ back, searchbar, reset, setCurrent }) => {
 
             }
             {
-                searchbar && <SearchBar setCurrent={setCurrent} input={input} setInput={setInput} />
+                searchbar && <SearchBar input={input} setInput={setInput} />
             }
             {
                 reset && <TouchableOpacity onPress={handleReset}>

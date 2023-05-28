@@ -1,4 +1,4 @@
-import { View, StyleSheet, ScrollView, Text, Dimensions } from 'react-native';
+import { View, StyleSheet, ScrollView, Text } from 'react-native';
 import {
     widthPercentageToDP as wp,
     heightPercentageToDP as hp,
@@ -22,15 +22,15 @@ const HomeScreen = () => {
     }, [dispatch])
 
     // Pagination
-    const [current, setCurrent] = useState(1)
+    const current = useSelector(state => state.currentPage)
     const [perPage] = useState(5)
     const max = Math.ceil(sortProducts.length / perPage);
     return (
         <View style={styles.container}>
-            <Search searchbar={true} reset={true} setCurrent={setCurrent} />
+            <Search searchbar={true} reset={true} />
             <View>
                 <ScrollView style={styles.scroll}>
-                    <Categories setCurrent={setCurrent} />
+                    <Categories />
                     {
                         sortProducts.length
                             ? sortProducts.slice((current - 1) * perPage, (current - 1) * perPage + perPage).map((e, i) => (
@@ -40,8 +40,7 @@ const HomeScreen = () => {
                     }
                 </ScrollView>
             </View>
-            <Pagination current={current} setCurrent={setCurrent} max={max} />
-
+            <Pagination max={max} />
             <Nav />
         </View>
     );

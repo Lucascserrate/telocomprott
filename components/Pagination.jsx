@@ -3,15 +3,19 @@ import {
     widthPercentageToDP as wp,
     heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
-const Pagination = ({ current, setCurrent, max }) => {
+import { useDispatch, useSelector } from 'react-redux';
+import { setCurrent } from '../redux/actions';
+const Pagination = ({ max }) => {
+    const dispatch = useDispatch()
+    const current = useSelector(state => state.currentPage)
     const next = () => {
         if (current < max) {
-            setCurrent(current + 1)
+            dispatch(setCurrent(current + 1))
         }
     }
     const previous = () => {
         if (current > 1) {
-            setCurrent(current - 1)
+            dispatch(setCurrent(current - 1))
         }
 
     }

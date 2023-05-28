@@ -1,7 +1,7 @@
 import { View, Text, StyleSheet, TouchableOpacity, ScrollView } from 'react-native';
 import { colors } from '../utils/styles';
 import { useDispatch } from 'react-redux';
-import { getByCategory } from '../redux/actions';
+import { getByCategory, setCurrent } from '../redux/actions';
 import {
     widthPercentageToDP as wp,
     heightPercentageToDP as hp,
@@ -15,11 +15,11 @@ const categories = [
     'Comestibles',
     'Hogar',
 ]
-const Categories = ({ setCurrent }) => {
+const Categories = () => {
     const dispatch = useDispatch()
     const setCategory = (category) => {
         dispatch(getByCategory(category))
-        setCurrent(1)
+        dispatch(setCurrent(1))
     }
     return (
         <View style={styles.container}>

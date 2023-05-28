@@ -12,6 +12,7 @@ import axios from 'axios';
 import FavButton from '../components/FavButton';
 import { colors } from '../utils/styles';
 import FavAlert from '../components/FavAlert';
+import Carousel from '../components/Carousel';
 
 const DetailScreen = () => {
     const [detail, setDetail] = useState()
@@ -32,9 +33,7 @@ const DetailScreen = () => {
             <View>
                 <ScrollView style={styles.scroll} showsVerticalScrollIndicator={false}>
                     <Text style={styles.title}>{detail?.title}</Text>
-                    <View style={styles.centerImage}>
-                        <Image style={styles.img} resizeMode='contain' source={{ uri: detail?.thumbnail }} />
-                    </View>
+                    <Carousel />
                     <View style={styles.tag} >
                         <Text style={styles.text}>{detail?.category}</Text>
                         <View style={styles.boxRow}>
@@ -86,16 +85,6 @@ const styles = StyleSheet.create({
         fontSize: hp(3),
         fontWeight: 'bold',
         margin: 15
-    },
-    centerImage: {
-        width: wp(100),
-        alignItems: 'center'
-
-    },
-    img: {
-        height: hp(33),
-        width: wp(96),
-        borderRadius: 12
     },
     tag: {
         flexDirection: 'row',

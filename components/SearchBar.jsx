@@ -5,13 +5,13 @@ import {
 } from 'react-native-responsive-screen';
 import SearchIcon from '../assets/search.svg'
 import { useDispatch } from 'react-redux';
-import { getByName } from '../redux/actions';
+import { getByName, setCurrent } from '../redux/actions';
 
-const SearchBar = ({ setCurrent, input, setInput }) => {
+const SearchBar = ({ input, setInput }) => {
     const dispatch = useDispatch()
 
     const handleInput = (input) => {
-        setCurrent(1)
+        dispatch(setCurrent(1))
         setInput(input)
         dispatch(getByName(input))
     }

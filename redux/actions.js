@@ -5,6 +5,8 @@ export const GET_FAVORITES = 'GET_FAVORITES';
 export const GET_BY_NAME = 'GET_BY_NAME';
 export const GET_BY_CATEGORY = 'GET_BY_CATEGORY';
 export const RESET = 'RESET';
+export const SET_CURRENT = 'SET_CURRENT';
+export const DECREASE = 'DECREASE';
 
 export const getProducts = () => async dispatch => {
     try {
@@ -49,3 +51,8 @@ export const getByCategory = (value) => async dispatch => {
 export const resetFilters = () => dispatch => {
     return dispatch({ type: RESET })
 }
+
+export const setCurrent = payload => dispatch => {
+    return dispatch({ type: SET_CURRENT, payload })
+}
+

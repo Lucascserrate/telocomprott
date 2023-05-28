@@ -45,7 +45,7 @@ const styles = StyleSheet.create({
         backgroundColor: colors.bgLight
     },
     title: {
-        fontSize: 20,
+        fontSize: hp(3),
         fontWeight: 'bold',
         margin: 15
     },
@@ -57,7 +57,8 @@ const styles = StyleSheet.create({
     },
     empty: {
         color: '#686868',
-        marginHorizontal: 15
+        marginHorizontal: 15,
+        fontSize: hp(1.85)
     }
 });
 

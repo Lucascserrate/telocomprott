@@ -7,19 +7,28 @@ import Search from '../components/Search';
 import { Image } from 'react-native-elements';
 import Nav from '../components/Nav';
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-native';
+import { useNavigate, useParams } from 'react-router-native';
 import axios from 'axios';
 import FavButton from '../components/FavButton';
 import { colors } from '../utils/styles';
 import FavAlert from '../components/FavAlert';
 import Carousel from '../components/Carousel';
+import ModalCart from '../components/ModalCart';
 
 const DetailScreen = () => {
     const [detail, setDetail] = useState()
     const [alert, setAlert] = useState(false)
+    const [displayModal, setDisplayModal] = useState(false)
     const { id } = useParams()
+    const navigate = useNavigate()
 
-
+    const timeout = () => {
+        setDisplayModal(true)
+        setTimeout(() => {
+            setDisplayModal(false)
+            navigate('/home')
+        }, 1500)
+    }
     useEffect(() => {
         axios.get(`https://dummyjson.com/products/${id}`)
             .then(res => setDetail(res.data))
@@ -30,6 +39,7 @@ const DetailScreen = () => {
         <View style={styles.container}>
             <Search back={true} />
             {alert && <FavAlert />}
+            <ModalCart displayModal={displayModal} setDisplayModal={setDisplayModal} />
             <View>
                 <ScrollView style={styles.scroll} showsVerticalScrollIndicator={false}>
                     <Text style={styles.title}>{detail?.title}</Text>
@@ -55,8 +65,8 @@ const DetailScreen = () => {
                         </View>
                         <Text style={styles.description}>{detail?.description}</Text>
                         <View style={styles.buttons}>
-                            <TouchableOpacity style={styles.webButton}>
-                                <Text style={styles.webText}>Sitio Web</Text>
+                            <TouchableOpacity style={styles.webButton} onPress={timeout}>
+                                <Text style={styles.webText}>Añadir al carrito</Text>
                             </TouchableOpacity>
                             <FavButton detail={detail} setAlert={setAlert} />
                         </View>
@@ -91,7 +101,7 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
         alignItems: 'center',
         marginVertical: 10,
-        width: wp(96),
+        width: wp(93),
         alignSelf: 'center',
     },
     text: {

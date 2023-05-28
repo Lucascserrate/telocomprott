@@ -1,10 +1,10 @@
-import { DECREASE, GET_BY_CATEGORY, GET_BY_ID, GET_BY_NAME, GET_FAVORITES, GET_PRODUCTS, INCREASE, RESET, SET_CURRENT } from './actions';
+import { GET_BY_CATEGORY, GET_BY_ID, GET_BY_NAME, GET_PRODUCTS, RESET, SET_CURRENT } from './actions';
 
 const initialState = {
     products: [],
     sortProducts: [],
     detail: {},
-    currentPage: 1
+    currentPage: 1,
 };
 
 const rootReducer = (state = initialState, action) => {

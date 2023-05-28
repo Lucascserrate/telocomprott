@@ -21,6 +21,7 @@ const styles = StyleSheet.create({
         right: 0,
         justifyContent: 'center',
         alignItems: 'center',
+        zIndex: 20
     },
     box: {
         paddingVertical: 8,

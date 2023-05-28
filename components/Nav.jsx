@@ -33,15 +33,17 @@ const Nav = () => {
 const styles = StyleSheet.create({
     container: {
         flexDirection: 'row',
-        paddingHorizontal: 15,
-        paddingBottom: hp(2.8),
+        marginBottom: hp(2),
+        paddingBottom: hp(0.8),
         paddingTop: hp(0.7),
         justifyContent: 'space-around',
         alignItems: 'center',
-        width: wp(100),
+        alignSelf: 'center',
+        width: wp(80),
         backgroundColor: colors.bgDark,
         position: 'absolute',
-        bottom: 0
+        bottom: 0,
+        borderRadius: 15
     },
     box: {
         alignContent: 'center',

@@ -16,7 +16,7 @@ const Welcome = () => {
         <View style={styles.container}>
             <View style={styles.box}>
                 <Image style={styles.img} resizeMode='contain' source={require('../assets/phone.png')} />
-                <Text style={styles.title}>Bienvenidos a CatalogoApp</Text>
+                <Text style={styles.title}>Bienvenidos a AppCatalogo</Text>
             </View>
             <Text style={styles.text}>Contamos con una gran cantidad de productos</Text>
             <View style={styles.row}>
@@ -43,7 +43,7 @@ const Welcome = () => {
                 <Image style={styles.rowImg} resizeMode='contain' source={require('../assets/hogar.png')} />
                 <Text style={styles.text}>Hogar</Text>
             </View>
-            <Text style={styles.text}>Te invitamos a vivir la experiencia CatalogoApp</Text>
+            <Text style={styles.text}>Te invitamos a vivir la experiencia AppCatalogo</Text>
             <View style={styles.boxButton}>
                 <TouchableOpacity onPress={goHome}>
                     <Text style={styles.btn}>Continuar</Text>

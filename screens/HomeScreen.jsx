@@ -12,7 +12,6 @@ import Pagination from '../components/Pagination';
 import Card from '../components/Card';
 import { colors } from '../utils/styles';
 import Categories from '../components/Categories';
-// import LottieView from 'lottie-react-native';
 
 const HomeScreen = () => {
     const dispatch = useDispatch()
@@ -38,9 +37,6 @@ const HomeScreen = () => {
                                 <Card key={i} id={e.id} title={e.title} images={e.images} price={e.price} />
                             ))
                             : <Text style={styles.notFound}>No se encontraron resultados</Text>
-                        /*  <View style={styles.lottieBox}>
-                            <LottieView style={styles.lottie} autoPlay={true} source={require('../assets/lottie/loader.json')} />
-                        </View> */
                     }
                 </ScrollView>
             </View>

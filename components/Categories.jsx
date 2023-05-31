@@ -36,7 +36,6 @@ const Categories = () => {
     );
 };
 
-// define your styles
 const styles = StyleSheet.create({
     container: {
         paddingLeft: 15,

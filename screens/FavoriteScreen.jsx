@@ -52,9 +52,6 @@ const styles = StyleSheet.create({
     cardBox: {
         height: hp(75),
     },
-    scroll: {
-        gap: 10,
-    },
     empty: {
         color: '#686868',
         marginHorizontal: 15,
